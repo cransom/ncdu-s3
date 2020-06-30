@@ -20,7 +20,7 @@ class DirectoryWalker(object):
             conflict = False
             add_dirs = []
 
-            for p1, p2 in itertools.izip_longest(self.current_path, path):
+            for p1, p2 in itertools.zip_longest(self.current_path, path):
                 if p1 != p2:
                     # first conflict starts another logic in our code
                     conflict = True

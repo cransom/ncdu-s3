@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 import click
 import itertools
-import urlparse
 from ncdu_s3 import NcduDataWriter, DirectoryWalker, S3DirectoryGenerator
 
 
@@ -14,7 +13,7 @@ def main(ctx, s3_url, output):
 
     try:
         s3_directory_generator = S3DirectoryGenerator(s3_url)
-    except SyntaxError, e:
+    except SyntaxError as e:
         ctx.fail(e.message)
         return
 
